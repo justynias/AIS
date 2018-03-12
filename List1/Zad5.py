@@ -9,8 +9,6 @@ for line in file:
     row=(line.strip()).split(",")
     iris_tab.append(row)
 
-
-
 sepal_len_setosa=[]
 petal_len_setosa=[]
 sepal_len_versicolor=[]

@@ -1,14 +1,11 @@
 import numpy as np
-
 file=open("iris.txt", 'r')
-
 iris_tab=[]
 i=0
 
 for line in file:
     row=(line.strip()).split(",")
     iris_tab.append(row)
-
 
 sepal_len=[]
 sepal_wid=[]

@@ -1,7 +1,6 @@
 from sklearn import preprocessing
 import numpy as np
 
-
 file=open("iris.txt", 'r')
 
 iris_tab=[]
@@ -21,9 +20,6 @@ for line in file:
 
 data=np.vstack((sep_len,sep_wid,pet_len,pet_wid))
 
-#print(data[:,0]) #wartosc pierwszej probki
-#print(data[0,:]) #wartosci pierwszego atrybutu
-
 #normalizacja
 data_norm = preprocessing.normalize(data, norm="l1")
 
@@ -37,7 +33,7 @@ def show_normalized(atribute, index):
     print("Wartosc minimalna: " + str(min(data_norm[index,:])))
     print("Wartosc maksymalna: " + atribute + ": " + str(max(data_norm[index,:])))
     print("Wartosc srednia: " + str(np.mean(data_norm[index,:])))
-    print("Wartosc odchylenia standardowego: " + str(np.std(data_norm[index,:]))+ "\n\n")
+    print("Wartosc odchylenia standardowego: " + str(np.std(data_norm[index,:]))+ "\n")
 
 
 show_normalized("Sepal length", 0)

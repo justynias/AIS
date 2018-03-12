@@ -1,7 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-#liczba próbek
 N = 10
 #próba losowa z rozkładu N(-2,1)
 x1 = 1*np.random.randn(N)+(-2)
@@ -10,7 +9,7 @@ x1 = 1*np.random.randn(N)+(-2)
 x2 = 10*np.random.rand(N)
 
 data=np.vstack((x1,x2))
-data=data.conj().transpose()
+data=data.transpose()
 
 plt.scatter(data[:, 0], data[:, 1])
 plt.xlabel("N(-2,1)Distribiution")

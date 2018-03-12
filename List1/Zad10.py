@@ -3,16 +3,15 @@ from sklearn import preprocessing
 from sklearn import metrics
 
 N = 10
-
 x1 = 1*np.random.randn(N)+(-2)
 x2 = 10*np.random.rand(N)
 
 data=np.vstack((x1,x2))
-data=data.conj().transpose()
+data=data.transpose()
 
-scal = preprocessing.MinMaxScaler((0,1))
+scale = preprocessing.MinMaxScaler((0,1))
 #operacja skalowania
-data_scaled = scal.fit_transform(data)
+data_scaled = scale.fit_transform(data)
 
 eukl_matrix=metrics.pairwise.pairwise_distances(data_scaled, metric='euclidean')
 print("Macierz odległości euklidesowych: ")

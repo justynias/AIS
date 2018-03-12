@@ -7,7 +7,6 @@ for line in file:
     row=(line.strip()).split(",")
     iris_tab.append(row)
 
-
 print("Liczba probek: "+ str(len(iris_tab)))
 for probe in iris_tab:
     i=i+1

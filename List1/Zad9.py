@@ -6,7 +6,7 @@ x1 = 1*np.random.randn(N)+(-2)
 x2 = 10*np.random.rand(N)
 
 data=np.vstack((x1,x2))
-data=data.conj().transpose()
+data=data.transpose()
 
 eukl_matrix=metrics.pairwise.pairwise_distances(data, metric='euclidean')
 print("Macierz odległości euklidesowych: ")
