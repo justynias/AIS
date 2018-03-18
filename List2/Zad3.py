@@ -32,20 +32,18 @@ Z = clf.predict(test)
 class1=test[(Z==1).nonzero()]
 class2=test[(Z==2).nonzero()]
 
-
+#visualization of classses
 plt.scatter(class1[:,0], class1[:,1],c='b')
 plt.scatter(class2[:,0], class2[:,1],c='r')
 plt.show()
 
-# decisions field
-# how do we know c,h ??
-C = 1.0
-h = .02
+# Visualizing decision boundaries
+h = .02   #parameter to arange the arrays
 x_min, x_max = test[:, 0].min() - 1, test[:, 0].max() + 1
 y_min, y_max = test[:, 1].min() - 1, test[:, 1].max() + 1
-xx, yy = np.meshgrid(np.arange(x_min, x_max, h),
-np.arange(y_min, y_max, h))
-Z = clf.predict(np.c_[xx.ravel(), yy.ravel()])
+xx, yy = np.meshgrid(np.arange(x_min, x_max, h),np.arange(y_min, y_max, h)) #creating matrix, different dimensions x,y
+Z = clf.predict(np.c_[xx.ravel(), yy.ravel()])   #classification new data
 Z = Z.reshape(xx.shape)
-plt.contour(xx, yy, Z, cmap=plt.cm.Paired)
+
+plt.contour(xx, yy, Z, cmap=plt.cm.gist_rainbow) # Decision boundaries
 plt.show()
