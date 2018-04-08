@@ -14,4 +14,4 @@ data=np.concatenate((train_data,test_data),axis=0)
 data_labels=np.concatenate((train_labels, test_labels), axis=0)
 
 # division of the whole set, training 30%, testing 70%
-train, test, train_labels1, test_labels1 = train_test_split(data, data_labels.ravel(), test_size=0.70, random_state=42)
+train, test, train_targets, test_targets = train_test_split(data, data_labels.ravel(), test_size=0.70, random_state=42)
